@@ -3,7 +3,10 @@ import pandas as pd
 import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
-
+import os
+from matplotlib import font_manager as fm
+fpath = os.path.join(os.getcwd(), "S-Core-Dream_OTF/SCDream9.ttf")
+prop = fm.FontProperties(fname=fpath)
 @st.cache_data
 def load_data():
     df = sns.load_dataset('tips')
