@@ -14,15 +14,15 @@ def main():
     tips = load_data()
 
     # 데이터가공
-    m_tips = tips.loc[tips['sex'] == 'Male', :]
-    f_tips = tips.loc[tips['sex'] == 'Female', :]
+    m_tips = tips.loc[tips['sex'] == '남성', :]
+    f_tips = tips.loc[tips['sex'] == '여성', :]
 
     # 시각화 차트
     fig, ax = plt.subplots(ncols=2, figsize=(10, 6), sharex=True, sharey=True)
     ax[0].scatter(x = m_tips['total_bill'], y = m_tips['tip'])
-    ax[0].set_title('Male')
+    ax[0].set_title('남성')
     ax[1].scatter(x = f_tips['total_bill'], y = f_tips['tip'])
-    ax[1].set_title('Female')
+    ax[1].set_title('여성')
 
     # 중요포인트
     # plt.show()
